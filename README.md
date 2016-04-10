@@ -22,8 +22,8 @@ Data is available in 3 different forms as mentioned above.  Each one has it's ow
 | Parameter name| Descrption           |
 |:---------------:|:-------------:|
 | *tmean*      | Mean temperature |
-| *tmax*      | Maximum temperature      |
-| *tmin* | Minimum temperature      |
+| *tmax*      | Maximum temperature*      |
+| *tmin* | Minimum temperature*      |
 | *ppt*  | Total precipitation (Rain and snow)|
 | *vpdmin* | Daily minimum vapor pressure deficit [averaged over all days in the month - normal data only] |
 | *vpdmax* |Daily maximum vapor pressure deficit [averaged over all days in the month - normal data only] |
@@ -242,3 +242,4 @@ leaflet() %>% addTiles(urlTemplate = 'http://server.arcgisonline.com/ArcGIS/rest
                                                               title = "Deg C")
 ```
 
+* Each observation is defined as the minimum/maximum temperature to occur in the 24 hours preceding 1200 UTC on the date on the data (7AM EST previous day-7AM EST current day). However, because PRISM has a grace period of +/- 4 hours around the 1200 UTC day definition, most morning observers are included in the current day. Therefore, it is likely that most tmin data will represent the temperature in the morning of the date in the data. All tmax observations are for the day preceding the date in the data.
